@@ -1,13 +1,17 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: '/api',   // proxied by Vite → http://localhost:5000/api
+  baseURL: 'https://survey-y0wg.onrender.com/api',
 });
 
 // Attach JWT token to every request
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
-  if (token) config.headers.Authorization = `Bearer ${token}`;
+
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+
   return config;
 });
 
@@ -20,6 +24,7 @@ api.interceptors.response.use(
       localStorage.removeItem('user');
       window.location.href = '/login';
     }
+
     return Promise.reject(err);
   }
 );
