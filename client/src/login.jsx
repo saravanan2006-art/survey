@@ -2,14 +2,13 @@ import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import axios from 'axios';
+import api from './api/axios';
 import surveyBoard from './assets/surveyboard.webp';
 import surveyCrayon from './assets/surveycrayon.webp';
 import './login.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const API = '/api/auth';
 
 const FEATURES = [
   {
@@ -248,7 +247,7 @@ export default function Login() {
     gsap.fromTo(cardRef.current, { scale: 1 }, { scale: 0.98, duration: 0.1, yoyo: true, repeat: 1, ease: 'power2.inOut' });
     try {
       if (mode === 'login') {
-        const { data } = await axios.post(`${API}/login`, { loginId: form.email, password: form.password });
+        const { data } = await api.post('/auth/login', { loginId: form.email, password: form.password });
         localStorage.setItem('token', data.token);
         localStorage.setItem('user', JSON.stringify(data.user));
         successNav(data.user.role);
