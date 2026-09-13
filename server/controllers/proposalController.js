@@ -1,7 +1,7 @@
 const Proposal = require("../models/Proposal");
 const {
   createProposalSchema,
-} = require("../validators/proposalValidator");
+} = require("../Validators/proposalValidator");
 
 const createProposal = async (req, res) => {
   try {
@@ -202,4 +202,4 @@ module.exports = {
   createProposal,
   getMyProposals,
   startSurvey,
-};
+};
