@@ -33,7 +33,7 @@ export default function Navbar({ title }) {
               <path d="M7 10h14M7 14h10M7 18h12" stroke="white" strokeWidth="2.2" strokeLinecap="round" />
             </svg>
           </div>
-          <span className="dash-nav-brand-name">SurveyAI</span>
+          <span className="dash-nav-brand-name">Survey-System</span>
         </div>
 
         {title && (

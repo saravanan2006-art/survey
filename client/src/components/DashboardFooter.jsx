@@ -7,10 +7,10 @@ export default function DashboardFooter() {
   return (
     <footer className="dash-footer" aria-label="Dashboard Footer">
       <div className="dash-footer-left">
-        <span className="dash-footer-brand">SurveyAI Platform</span>
+        <span className="dash-footer-brand">Survey-System Platform</span>
         <span className="dash-footer-dot">•</span>
         <span style={{ color: 'var(--text-muted)' }}>
-          © {currentYear} SurveyAI Technologies Inc. All rights reserved.
+          © {currentYear} 
         </span>
         <span className="dash-footer-dot">•</span>
         

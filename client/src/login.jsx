@@ -252,7 +252,7 @@ export default function Login() {
         localStorage.setItem('user', JSON.stringify(data.user));
         successNav(data.user.role);
       } else {
-        await axios.post(`${API}/register`, { name: form.name, email: form.email, password: form.password });
+        await api.post('/auth/register', { name: form.name, email: form.email, password: form.password });
         const { data } = await axios.post(`${API}/login`, { loginId: form.email, password: form.password });
         localStorage.setItem('token', data.token);
         localStorage.setItem('user', JSON.stringify(data.user));
@@ -283,7 +283,7 @@ export default function Login() {
                 <path d="M7 10h14M7 14h10M7 18h12" stroke="white" strokeWidth="2.2" strokeLinecap="round" />
               </svg>
             </div>
-            <span style={{ fontSize: 20, fontWeight: 800, letterSpacing: -0.5 }}>SurveyAI</span>
+            <span style={{ fontSize: 20, fontWeight: 800, letterSpacing: -0.5 }}>Survey-System</span>
           </a>
 
           {/* Nav links */}
@@ -337,7 +337,7 @@ export default function Login() {
                 </defs>
               </svg>
             </div>
-            <span className="brand-name">SurveyAI</span>
+            <span className="brand-name">Survey-System</span>
           </div>
 
           <div ref={titleRef} className="card-header">
@@ -405,7 +405,7 @@ export default function Login() {
 
         {/* Scroll hint */}
         <div className="scroll-hint">
-          <span>Discover SurveyAI</span>
+          <span>Discover Survey-System</span>
           <div className="scroll-arrow">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 5v14M5 12l7 7 7-7" /></svg>
           </div>
@@ -474,7 +474,7 @@ export default function Login() {
             <span className="pill pill--teal">🤖 AI Analysis</span>
             <h3 className="text-col-title">Insights in seconds, not days</h3>
             <p className="text-col-body">
-              Stop spending hours in spreadsheets. SurveyAI reads through every response, detects sentiment, identifies key themes, and surfaces what matters most — automatically.
+              Stop spending hours in spreadsheets. Survey-System reads through every response, detects sentiment, identifies key themes, and surfaces what matters most — automatically.
             </p>
             <ul className="check-list">
               <li>✓ Sentiment analysis per response</li>
@@ -506,7 +506,7 @@ export default function Login() {
             <div className="cta-orb cta-orb-1" />
             <div className="cta-orb cta-orb-2" />
             <h2 className="cta-title">Ready to get started?</h2>
-            <p className="cta-sub">Join 2 million+ teams already using SurveyAI to collect smarter feedback.</p>
+            <p className="cta-sub">Join 2 million+ teams already using Survey-System to collect smarter feedback.</p>
             <button
               className="cta-btn"
               onClick={() => {
@@ -534,7 +534,7 @@ export default function Login() {
                     <path d="M7 10h14M7 14h10M7 18h12" stroke="white" strokeWidth="2.4" strokeLinecap="round" />
                   </svg>
                 </div>
-                <span>SurveyAI</span>
+                <span>Survey-System</span>
               </div>
               <p className="lp-footer-tagline">
                 The enterprise platform for real-time survey orchestration, geofenced polling, and AI-driven sentiment analysis.
@@ -616,7 +616,7 @@ export default function Login() {
           {/* Bottom bar */}
           <div className="lp-footer-bottom">
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
-              <p className="lp-footer-copy">© {new Date().getFullYear()} SurveyAI Technologies Inc. All rights reserved.</p>
+              <p className="lp-footer-copy">© {new Date().getFullYear()} Survey-System Technologies Inc. All rights reserved.</p>
               <span style={{ color: '#334155' }}>•</span>
               <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 12, color: '#34d399' }}>
                 <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#10b981' }} />
